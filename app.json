@@ -1,0 +1,12 @@
+{
+  "name": "MyFirstUI",
+  "displayName": "MyFirstUI",
+  "expo": {
+    "name": "MyFirstUI",
+    "slug": "MyFirstUI",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

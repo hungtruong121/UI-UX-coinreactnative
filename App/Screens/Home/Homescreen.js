@@ -1,43 +1,26 @@
 import React, { Component } from 'react';
-import { View, Button, TextInput, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image, ImageBackground } from 'react-native';
+import { Button} from 'react-native-elements';
+import Images from '../../Theme/Images';
+import Styles from './Homestyle';
 
-class Homescreen extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            text:''
-        }
-    }
-    render() {
-        return (
-        <View style={styles.container}>
-        <TextInput
-        style={{height: 40, width: 160, marginBottom: 10, borderColor: 'gray', borderWidth: 1}}
-        onChangeText={(text) => this.setState({text})}
-        value={this.state.text}
-      />
-      <Button
-        onPress={()=>{this.props.navigation.navigate('Sample', {
-            data: this.state.text
-          });}}
-        title="Press to Navigate"
-        color="#841584"
-      />
-         </View>
-        );
-    }
+const Home = (props) => {
+    const onPressTitle = () => {
+        this.props.na;
+      };
+    return ( 
+        <ImageBackground source = { Images.backgroud } style = { Styles.container } >
+        <View style={Styles.overlay}>
+        <Image source = { Images.logo } style = { Styles.logoStyle }/>
+        <Text style={Styles.appName}>JWC LAB COIN</Text> 
+        <Button  buttonStyle={Styles.buttonLogin}  title="Đăng Nhập"></Button>
+        <Button  buttonStyle={Styles.buttonRegister}  title="Đăng Ký"></Button>
+        <View style={{flexDirection: 'row'}}>
+        <Text style={Styles.appFogotPass} onPress={onPressTitle}>Forgot password</Text> 
+        <Text style={Styles.appRegister}>Register</Text>
+        </View>
+        </View>
+        </ImageBackground >
+    )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-    },
-    image: {
-        height: 180,
-        width: 200,
-        transform: [{ rotate: '90deg' }]
-    }
-});
-export default Homescreen;
+export default Home
